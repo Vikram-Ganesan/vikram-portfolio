@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { THEME_STORAGE_KEY } from '../constants/portfolio-copy';
+import { THEME_STORAGE_KEY } from '../config/theme-config';
 
 type Theme = 'light' | 'dark';
 

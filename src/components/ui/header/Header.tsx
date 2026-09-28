@@ -3,8 +3,12 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
-import { portfolioContent } from '../constants/portfolio-copy';
-import { useTheme } from '../hooks/use-theme';
+import profilePhoto from '../assets/Vikram-G.png';
+import { NAVBAR_COPY, NAVBAR_LINKS, NAVIGATION_ITEMS } from '../../../config/navigation-config';
+import { PROFILE_CONFIG } from '../../../config/profile-config';
+import { THEME_TOGGLE_LABELS } from '../../../config/theme-config';
+import { MOBILE_NAVIGATION_ID } from '../../../constants/component-constants';
+import { useTheme } from '../../../hooks/use-theme';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,22 +20,20 @@ export function Header() {
       <div className="page-width flex min-h-[72px] items-center justify-between gap-6">
         <a
           className="flex items-center gap-3"
-          href="#home"
-          aria-label={portfolioContent.profile.homeLabel}
+          href={NAVBAR_LINKS.home}
+          aria-label={`${PROFILE_CONFIG.fullName} home`}
         >
-          <span className="brand-mark font-display">VG</span>
+          <img className="brand-photo" src={profilePhoto} alt="" aria-hidden="true" />
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-sm font-semibold">
-              {portfolioContent.profile.name}
-            </span>
+            <span className="font-display text-sm font-semibold">{PROFILE_CONFIG.fullName}</span>
             <span className="mono mt-1 text-[10px] text-muted">
-              {portfolioContent.profile.roleLabel}
+              {PROFILE_CONFIG.role.toUpperCase()}
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
-          {portfolioContent.navigation.map((item) => (
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+          {NAVIGATION_ITEMS.map((item) => (
             <a className="nav-link" href={item.href} key={item.href}>
               {item.label}
             </a>
@@ -39,36 +41,24 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a className="header-contact hidden sm:inline-flex" href="#contact">
-            {portfolioContent.profile.contactLabel} <span aria-hidden="true">↗</span>
+          <a className="header-contact hidden sm:inline-flex" href={NAVBAR_LINKS.contact}>
+            {NAVBAR_COPY.contactAction} <span aria-hidden="true">↗</span>
           </a>
           <button
             className="icon-button"
             type="button"
             onClick={toggleTheme}
-            aria-label={
-              theme === 'dark'
-                ? portfolioContent.themeToggle.lightLabel
-                : portfolioContent.themeToggle.darkLabel
-            }
-            title={
-              theme === 'dark'
-                ? portfolioContent.themeToggle.lightLabel
-                : portfolioContent.themeToggle.darkLabel
-            }
+            aria-label={theme === 'dark' ? THEME_TOGGLE_LABELS.light : THEME_TOGGLE_LABELS.dark}
+            title={theme === 'dark' ? THEME_TOGGLE_LABELS.light : THEME_TOGGLE_LABELS.dark}
           >
             <ThemeIcon fontSize="small" aria-hidden="true" />
           </button>
           <button
-            className="icon-button md:hidden"
+            className="icon-button mobile-menu-button lg:hidden"
             type="button"
-            aria-label={
-              isMenuOpen
-                ? portfolioContent.navigationLabels.close
-                : portfolioContent.navigationLabels.open
-            }
+            aria-label={isMenuOpen ? NAVBAR_COPY.closeMenu : NAVBAR_COPY.openMenu}
             aria-expanded={isMenuOpen}
-            aria-controls="mobile-navigation"
+            aria-controls={MOBILE_NAVIGATION_ID}
             onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
           >
             {isMenuOpen ? (
@@ -82,11 +72,11 @@ export function Header() {
 
       {isMenuOpen && (
         <nav
-          id="mobile-navigation"
-          className="page-width flex flex-col gap-1 border-t border-line py-3 md:hidden"
+          id={MOBILE_NAVIGATION_ID}
+          className="page-width flex flex-col gap-1 border-t border-line py-3 lg:hidden"
           aria-label="Mobile navigation"
         >
-          {portfolioContent.navigation.map((item) => (
+          {NAVIGATION_ITEMS.map((item) => (
             <a
               className="mobile-nav-link"
               href={item.href}

@@ -5,12 +5,13 @@ import axios, {
   type AxiosError,
 } from 'axios';
 import { config } from '../config/app-config';
-import { Logger } from '../utilities/logger';
+import { Logger } from '../utils/logger.ts';
 import type {
   ApiClientInterface,
   ApiRequestConfig,
   ApiResponse,
 } from '../interfaces/api-client.ts';
+import { v4 as uuid } from 'uuid';
 
 class ApiClientImpl implements ApiClientInterface {
   private readonly client: AxiosInstance;
@@ -32,7 +33,7 @@ class ApiClientImpl implements ApiClientInterface {
     // Request interceptor
     this.client.interceptors.request.use(
       (reqConfig: InternalAxiosRequestConfig) => {
-        const correlationId = `req-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+        const correlationId = uuid();
         reqConfig.headers.set('X-Correlation-ID', correlationId);
         Logger.debug(`[HTTP Request] ${reqConfig.method?.toUpperCase()} ${reqConfig.url}`, {
           correlationId,

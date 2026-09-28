@@ -187,6 +187,18 @@ The Vite development server is configured to run at:
 http://localhost:3000
 ```
 
+### Configure contact email
+
+The contact form sends through EmailJS without opening the visitor's email app.
+
+1. Create an EmailJS account and connect the email service that should receive portfolio enquiries.
+2. For an auto-reply template, set **To Email** to `{{email}}` and use `{{name}}`, `{{title}}`, and `{{message}}` in the content. Set **Reply To** to your own inbox so replies reach you.
+3. To receive a copy of every inquiry, set the template's **Bcc** to your inbox, or create a separate notification template addressed to your inbox. Keep the recipient fixed in EmailJS; do not accept it from form input.
+4. Copy `.env.example` to `.env.local` and fill in the EmailJS service ID, template ID, and public key.
+5. Restart the development server. In production, add the same `VITE_EMAILJS_*` values to the hosting provider's environment settings and rebuild.
+
+The EmailJS public key is designed for browser use. Never put a private key or secret in a `VITE_` variable. Restrict allowed origins in EmailJS and enable its available abuse protection before publishing.
+
 ### Production build
 
 ```bash

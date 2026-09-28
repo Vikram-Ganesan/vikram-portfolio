@@ -1,5 +1,5 @@
 import avasoftLogo from '../assets/Avasoft-Logo.svg';
-import focusEdumaticsLogo from '../assets/Focus-Edumatics-Logo.png';
+import focusEdumaticsLogo from '../assets/Focus-Edumatics-Logo.svg';
 import zebLogo from '../assets/ZEB-Logo.svg';
 
 export interface ExperienceEntry {
@@ -79,7 +79,7 @@ export const experience: readonly ExperienceEntry[] = [
     company: 'Focus Edumatics Pvt Ltd',
     dates: 'Apr 2021 – Aug 2024',
     duration: '3 years 5 months',
-    location: 'Coimbatore, India · Remote',
+    location: 'Coimbatore, India · Hybrid',
     summary: 'Mathematics instruction and team mentoring for K–12 students in the United States.',
     highlights: [
       'Taught mathematics and supported student engagement, instructional quality, and learning outcomes.',

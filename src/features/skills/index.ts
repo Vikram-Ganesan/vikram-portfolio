@@ -1,0 +1,1 @@
+export { TechnologyMarquee } from './TechnologyMarquee';

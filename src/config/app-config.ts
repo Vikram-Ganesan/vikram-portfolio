@@ -45,9 +45,9 @@ function getEnvironment(): AppEnvironment {
   return import.meta.env.DEV ? 'development' : 'production';
 }
 
-const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
-const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
-const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim() || '';
+const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim() || '';
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim() || '';
 
 export const config: Config = {
   app: {
