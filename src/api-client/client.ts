@@ -10,7 +10,7 @@ import type {
   ApiClientInterface,
   ApiRequestConfig,
   ApiResponse,
-} from '../interfaces/api-client.ts';
+} from '../types/api-client-types.ts';
 import { v4 as uuid } from 'uuid';
 
 class ApiClientImpl implements ApiClientInterface {

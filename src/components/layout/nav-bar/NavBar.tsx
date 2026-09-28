@@ -3,9 +3,13 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useEffect, useState } from 'react';
-import { NAVBAR_COPY, NAVBAR_LINKS, NAVIGATION_ITEMS } from '../../../config/navigation-config';
-import { PROFILE_CONFIG } from '../../../config/profile-config';
-import { THEME_TOGGLE_LABELS } from '../../../config/theme-config';
+import {
+  NAVBAR_COPY,
+  NAVBAR_LINKS,
+  NAVIGATION_ITEMS,
+} from '../../../constants/navigation-constants';
+import { PROFILE_CONFIG } from '../../../constants/profile-constants';
+import { THEME_TOGGLE_LABELS } from '../../../constants/theme-constants';
 import { MOBILE_NAVIGATION_ID } from '../../../constants/component-constants';
 import { useTheme } from '../../../hooks/use-theme';
 import { cn } from '../../../lib/cn';

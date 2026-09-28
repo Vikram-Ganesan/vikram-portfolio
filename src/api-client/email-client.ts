@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 import type { EmailJsConfig } from '../config/app-config';
-import type { ContactInquiry } from '../interfaces/contact-inquiry';
+import type { ContactInquiry } from '../types/contact-inquiry-types';
 
 export async function sendContactEmail(
   emailConfig: EmailJsConfig,
