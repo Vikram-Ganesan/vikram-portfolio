@@ -1,4 +1,4 @@
-import { PROFILE_CONFIG } from './profile-config';
+import { PROFILE_CONFIG } from './profile-constants';
 
 export const SOCIAL_LINKS = [
   {

@@ -64,6 +64,10 @@
   --danger-800: #982d37;
   --contour-line: rgba(49, 93, 155, 0.12);
   --contour-accent: rgba(20, 124, 157, 0.34);
+  --network-line: rgba(49, 93, 155, 0.24);
+  --network-cyan: #13a8ba;
+  --network-violet: #8763c5;
+  --network-green: #50966b;
   --page-background: linear-gradient(125deg, #e7f2ff 0%, #f7f9fd 48%, #fff0f4 100%);
   font-family: var(--font-sans);
   font-synthesis: none;
@@ -94,6 +98,10 @@
   --border-strong: #3a4b64;
   --contour-line: rgba(118, 165, 223, 0.14);
   --contour-accent: rgba(91, 193, 255, 0.42);
+  --network-line: rgba(130, 174, 234, 0.28);
+  --network-cyan: #69d7e8;
+  --network-violet: #ba9be9;
+  --network-green: #86d1a0;
   --page-background: linear-gradient(125deg, #07101f 0%, #101b37 48%, #24172f 100%);
 }
 

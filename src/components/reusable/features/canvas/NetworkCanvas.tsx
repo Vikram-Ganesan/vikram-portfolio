@@ -140,5 +140,11 @@ export function NetworkCanvas() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="network-canvas" aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none absolute inset-0 z-0 block size-full opacity-75"
+      aria-hidden="true"
+    />
+  );
 }

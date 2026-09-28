@@ -1,6 +1,6 @@
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
-import { experience, experienceHeading } from '../constants/experience';
-import { SectionHeading } from './SectionHeading';
+import { experience, experienceHeading } from '../../constants/sections/experience';
+import { SectionHeading } from '../../components/reusable/features/section-heading';
 
 export function ExperienceSection() {
   return (

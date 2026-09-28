@@ -1,6 +1,6 @@
 import { sendContactEmail } from '../api-client/email-client';
 import { config } from '../config/app-config';
-import type { ContactInquiry } from '../interfaces/contact-inquiry';
+import type { ContactInquiry } from '../types/contact-inquiry-types';
 
 export class ContactEmailNotConfiguredError extends Error {
   constructor() {

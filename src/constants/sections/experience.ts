@@ -1,19 +1,7 @@
-import avasoftLogo from '../assets/Avasoft-Logo.svg';
-import focusEdumaticsLogo from '../assets/Focus-Edumatics-Logo.svg';
-import zebLogo from '../assets/ZEB-Logo.svg';
-
-export interface ExperienceEntry {
-  readonly role: string;
-  readonly company: string;
-  readonly dates: string;
-  readonly duration: string;
-  readonly location: string;
-  readonly summary: string;
-  readonly highlights: readonly string[];
-  readonly technologies: readonly string[];
-  readonly logo: string;
-  readonly logoTheme: 'light' | 'dark';
-}
+import avasoftLogo from '../../assets/images/experience/Avasoft-logo.svg';
+import focusEdumaticsLogo from '../../assets/images/experience/Focus-Edumatics-Logo.svg';
+import zebLogo from '../../assets/images/experience/ZEB-logo.svg';
+import type { ExperienceEntry } from '../../types/experience-types';
 
 export const experienceHeading = {
   eyebrow: 'EXPERIENCE',

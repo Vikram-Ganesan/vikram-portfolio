@@ -14,13 +14,6 @@ export interface AppConfig {
   readonly useMockService: boolean;
 }
 
-export interface SocialLinksConfig {
-  readonly email: string;
-  readonly location: string;
-  readonly linkedin: string;
-  readonly github: string;
-}
-
 export interface EmailJsConfig {
   readonly serviceId: string;
   readonly templateId: string;
@@ -31,7 +24,6 @@ export interface EmailJsConfig {
 export interface Config {
   readonly app: AppConfig;
   readonly api: ApiConfig;
-  readonly social: SocialLinksConfig;
   readonly emailjs: EmailJsConfig;
 }
 
@@ -60,12 +52,6 @@ export const config: Config = {
   api: {
     baseUrl: import.meta.env.VITE_API_BASE_URL?.trim() || '/api',
     timeoutMs: 15000,
-  },
-  social: {
-    email: 'gvikram989@gmail.com',
-    location: 'Chennai, Tamil Nadu, India',
-    linkedin: 'https://www.linkedin.com/in/vikramganesan/',
-    github: 'https://github.com/Vikram-Ganesan',
   },
   emailjs: {
     serviceId: emailJsServiceId,

@@ -25,7 +25,7 @@ import {
 import { FaAws, FaCss3, FaHtml5, FaJava, FaMicrosoft, FaSalesforce } from 'react-icons/fa6';
 import { useState } from 'react';
 import type { ReactNode } from 'react';
-import { technologyLabel, technologies } from '../../constants/language-and-skills';
+import { technologyLabel, technologies } from '../../constants/sections/language-and-skills';
 import { cn } from '../../lib/cn';
 
 interface TechnologyMark {
