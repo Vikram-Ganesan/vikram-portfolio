@@ -192,10 +192,24 @@ http://localhost:3000
 The contact form sends through EmailJS without opening the visitor's email app.
 
 1. Create an EmailJS account and connect the email service that should receive portfolio enquiries.
-2. For an auto-reply template, set **To Email** to `{{email}}` and use `{{name}}`, `{{title}}`, and `{{message}}` in the content. Set **Reply To** to your own inbox so replies reach you.
-3. To receive a copy of every inquiry, set the template's **Bcc** to your inbox, or create a separate notification template addressed to your inbox. Keep the recipient fixed in EmailJS; do not accept it from form input.
-4. Copy `.env.example` to `.env.local` and fill in the EmailJS service ID, template ID, and public key.
-5. Restart the development server. In production, add the same `VITE_EMAILJS_*` values to the hosting provider's environment settings and rebuild.
+2. Create a main notification template addressed to your inbox. Set **Reply To** to `{{reply_to}}` and use this subject and body:
+
+**Subject:** `New portfolio inquiry from {{name}}`
+
+```text
+New message received through your portfolio.
+
+Name: {{name}}
+Email: {{email}}
+Subject: {{title}}
+
+Message:
+{{message}}
+```
+
+3. In the main template's **Auto-Reply** tab, link the visitor auto-reply template. Set that linked template's **To Email** to `{{email}}` and include the confirmation copy in its body.
+4. Copy `.env.example` to `.env.local` and set the service ID, the main notification template ID, and the public key.
+5. Restart the development server. In production, add the same `VITE_EMAILJS_*` values to the hosting provider's environment settings and redeploy.
 
 The EmailJS public key is designed for browser use. Never put a private key or secret in a `VITE_` variable. Restrict allowed origins in EmailJS and enable its available abuse protection before publishing.
 
