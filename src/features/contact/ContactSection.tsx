@@ -124,8 +124,8 @@ export function ContactSection() {
           </div>
 
           <form className="grid content-start gap-4" noValidate onSubmit={handleSubmit}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="grid gap-2 text-xs font-medium text-content-secondary">
+            <div className="grid items-start gap-4 sm:grid-cols-2">
+              <label className="grid content-start gap-2 text-xs font-medium text-content-secondary">
                 <span className="flex items-center gap-1">
                   {contactSection.nameLabel} <span className="text-accent">*</span>
                 </span>
@@ -152,7 +152,7 @@ export function ContactSection() {
                 )}
               </label>
 
-              <label className="grid gap-2 text-xs font-medium text-content-secondary">
+              <label className="grid content-start gap-2 text-xs font-medium text-content-secondary">
                 <span className="flex items-center gap-1">
                   {contactSection.emailLabel} <span className="text-accent">*</span>
                 </span>
@@ -180,7 +180,7 @@ export function ContactSection() {
               </label>
             </div>
 
-            <label className="grid gap-2 text-xs font-medium text-content-secondary">
+            <label className="grid content-start gap-2 text-xs font-medium text-content-secondary">
               {contactSection.subjectLabel}
               <input
                 className="min-h-12 w-full rounded-control border border-border-strong bg-surface-primary px-4 text-sm text-content-primary placeholder:text-content-primary/70 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/25"
@@ -192,7 +192,7 @@ export function ContactSection() {
               />
             </label>
 
-            <label className="grid gap-2 text-xs font-medium text-content-secondary">
+            <label className="grid content-start gap-2 text-xs font-medium text-content-secondary">
               <span className="flex items-center gap-1">
                 {contactSection.messageLabel} <span className="text-accent">*</span>
               </span>
